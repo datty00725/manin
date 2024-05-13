@@ -110,3 +110,4 @@ class TaylorSeriesSin(Scene):
         self.play(Indicate(current_text))
         self.wait(1)
 
+
