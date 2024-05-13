@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part1/media/videos/test2/1920p15/partial_movie_files/NumberLineAndEllipse/4060174042_526761597_223132457.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part1/media/videos/test2/1920p15/partial_movie_files/NumberLineAndEllipse/2498110781_3890345977_796130443.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part1/media/videos/test2/1920p15/partial_movie_files/NumberLineAndEllipse/2498110781_3444278083_20923380.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part1/media/videos/test2/1920p15/partial_movie_files/NumberLineAndEllipse/2498110781_3890345977_3487410775.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part1/media/videos/test2/1920p15/partial_movie_files/NumberLineAndEllipse/2498110781_104406291_1410736962.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part1/media/videos/test2/1920p15/partial_movie_files/NumberLineAndEllipse/2498110781_3890345977_2028166959.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part1/media/videos/test2/1920p15/partial_movie_files/NumberLineAndEllipse/2498110781_609138381_3448639777.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part1/media/videos/test2/1920p15/partial_movie_files/NumberLineAndEllipse/2498110781_3256240983_466232990.mp4'

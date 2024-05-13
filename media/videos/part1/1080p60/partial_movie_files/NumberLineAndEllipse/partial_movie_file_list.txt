@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/media/videos/part1/1080p60/partial_movie_files/NumberLineAndEllipse/3977891868_1053570969_223132457.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/media/videos/part1/1080p60/partial_movie_files/NumberLineAndEllipse/2852726489_1844952752_1988623665.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/media/videos/part1/1080p60/partial_movie_files/NumberLineAndEllipse/2852726489_915088421_571010684.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/media/videos/part1/1080p60/partial_movie_files/NumberLineAndEllipse/2852726489_2639205418_2362535780.mp4'

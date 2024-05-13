@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part5/media/videos/test/1920p60/partial_movie_files/Euler/1795198041_276931676_863738946.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part5/media/videos/test/1920p60/partial_movie_files/Euler/2210946382_2472551171_3714607679.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part5/media/videos/test/1920p60/partial_movie_files/Euler/2210946382_1609812626_423579716.mp4'

@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/media/videos/aaa/1080p60/partial_movie_files/MovingAngle/3977891868_123554531_3539227581.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/media/videos/aaa/1080p60/partial_movie_files/MovingAngle/2852726489_943063281_558558338.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/media/videos/aaa/1080p60/partial_movie_files/MovingAngle/2852726489_1732576810_922383295.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/media/videos/aaa/1080p60/partial_movie_files/MovingAngle/2852726489_849897492_1758490179.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/media/videos/aaa/1080p60/partial_movie_files/MovingAngle/2852726489_3120122460_2619099906.mp4'

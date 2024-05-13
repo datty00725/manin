@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part3/media/videos/test3/1080p60/partial_movie_files/Derivatives/3977891868_3936975277_223132457.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part3/media/videos/test3/1080p60/partial_movie_files/Derivatives/2852726489_2919340033_982192182.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part3/media/videos/test3/1080p60/partial_movie_files/Derivatives/2852726489_1954946754_270235719.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part3/media/videos/test3/1080p60/partial_movie_files/Derivatives/2852726489_2919340033_1071484169.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part3/media/videos/test3/1080p60/partial_movie_files/Derivatives/2852726489_2443117340_574630669.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part3/media/videos/test3/1080p60/partial_movie_files/Derivatives/2852726489_3297347706_3503999978.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part3/media/videos/test3/1080p60/partial_movie_files/Derivatives/2852726489_1733944848_1898444156.mp4'
