@@ -1,0 +1,11 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/1795198041_107206126_223132457.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/2210946382_1704852926_2291872510.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/2210946382_3574921760_816927286.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/2210946382_3008217233_3963401570.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/2210946382_261647378_1933153262.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/2210946382_4094343722_1933153262.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/2210946382_1005791910_1933153262.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/2210946382_3214594762_1933153262.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/2210946382_1761219916_1933153262.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part8/media/videos/fourie_x/1920p60/partial_movie_files/FourierSeriesLine/2210946382_1704852926_3723271336.mp4'
