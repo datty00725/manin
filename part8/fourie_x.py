@@ -87,8 +87,11 @@ class FourierSeriesLine(MovingCameraScene):
             next_text = term_texts[i]
             self.play(Transform(current_graph, next_graph), Write(next_text))
             self.wait(1)
-            self.remove(current_graph)
-            current_graph = next_graph
+            if i != 5:
+                self.remove(current_graph)
+                current_graph = next_graph
+        self.wait(1)
+
 
         # 原点にズームイン
         self.play(
