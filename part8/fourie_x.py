@@ -6,9 +6,23 @@ class FourierSeriesLine(MovingCameraScene):
         # Save the state of camera
         self.camera.frame.save_state()
 
-        gros_titre = Text("フーリエ級数展開").scale(3)
+        gros_titre = Text("フーリエ級数展開").scale(2.5)
+        sub_titre1 = (
+            VGroup(Text("直線"), MathTex("y = x"))
+            .arrange(RIGHT)
+            .next_to(gros_titre, DOWN)
+            .scale(2)
+        )
         sub_titre = Text("直線 y = x").next_to(gros_titre, 3 * DOWN).scale(2)
-        title = VGroup(gros_titre, sub_titre)
+        # sub_titre1=Text("-PI<x<PIでの近似").next_to(gros_titre, 3 * DOWN).scale(2)
+
+        sub_titre1 = (
+            VGroup(MathTex("-\\pi < x < \\pi"), Text(" での近似"))
+            .arrange(RIGHT)
+            .next_to(sub_titre, DOWN)
+            .scale(2)
+        )
+        title = VGroup(gros_titre, sub_titre, sub_titre1)
 
         self.play(Write(title))
         self.wait()
@@ -39,7 +53,7 @@ class FourierSeriesLine(MovingCameraScene):
 
         # 直線 y = x を青色で表示し、「y = x」と表示
         line_graph = axes.plot(lambda x: x, x_range=[-2 * PI, 2 * PI], color=BLUE)
-        line_text = MathTex("y = x").to_edge(UP).shift(UP * 2).scale(1)
+        line_text = MathTex("y = x").to_edge(UP).shift(UP * 1).scale(2)
         self.play(Create(line_graph), Write(line_text))
         self.wait(1)
 
@@ -57,7 +71,7 @@ class FourierSeriesLine(MovingCameraScene):
                 " + \\cdots",
             )
             .to_edge(UP)
-            .shift(UP * 2)
+            .shift(UP * 1.5)
             .scale(1)
         )
 
@@ -108,25 +122,34 @@ class FourierSeriesLine(MovingCameraScene):
         self.wait(1)
 
         # ギブズ現象が起きている点を円で囲む
-        circle1 = Circle(radius=0.2, color=YELLOW).move_to(axes.c2p(-PI, -PI))
-        circle2 = Circle(radius=0.2, color=YELLOW).move_to(axes.c2p(PI, PI))
+        circle1 = Circle(radius=0.5, color=YELLOW).move_to(axes.c2p(-PI, -PI))
+        circle2 = Circle(radius=0.5, color=YELLOW).move_to(axes.c2p(PI, PI))
 
         self.play(Create(circle1), Create(circle2))
-        self.wait(1)
-        
-        text1 = Text("周期の端では角が飛び出てて、元の関数に収束しない。").shift(2 * UP)
-        text2 = Text("これをギブス現象という").next_to(text1, DOWN)
 
-        self.play(Write(text1, text2))
+        text1 = (
+            Text("周期の端では角が飛び出てて、元の関数に収束しない。")
+            .scale(0.8)
+            .shift(2 * UP)
+        )
+        text2_part2 = Text("ギブス現象").next_to(text1, DOWN)
+        text2_part1 = Text("これを").next_to(text2_part2, LEFT)
+        text2_part3 = Text("という").next_to(text2_part2, RIGHT)
+        text2 = VGroup(text2_part1, text2_part2, text2_part3)
+
+        self.play(Write(text1))
+        self.play(Write(text2))
         self.wait(1)
-        # self.play(ShowPassingFlashAround(text2[1]))
-        self.play(FadeOut(text))
+        self.play(Indicate(text2_part2))
+        self.wait(1)
 
         all_objects = VGroup(term_texts)
         self.remove(line_text)
         self.play(
             all_objects.animate.shift(DOWN * 4),
             FadeOut(
+                circle1,
+                circle2,
                 text1,
                 text2,
                 current_graph,
