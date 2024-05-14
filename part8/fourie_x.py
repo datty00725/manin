@@ -2,64 +2,112 @@ from manim import *
 
 class FourierSeriesLine(Scene):
     def construct(self):
-        # タイトルの設定
-        title = Text("フーリエ級数展開")
-        title.scale(3)
+        gros_titre = Text("フーリエ級数展開")
+        gros_titre.scale(3)
 
-        self.play(Write(title))
+        self.play(Write(gros_titre))
         self.wait()
 
         self.play(
-            title.animate.shift(3.5 * LEFT + 3.5 * UP).scale(0.3),
+            gros_titre.animate.shift(3.5 * LEFT + 8 * UP).scale(0.3),
         )
 
-        # 座標軸の設定
         axes = Axes(
-            x_range=[-2*PI, 2*PI, PI/2],
-            y_range=[-2*PI, 2*PI, PI/2],
-            x_length=10,
-            y_length=6,
-            axis_config={"color": BLACK},
+            x_range=[-5, 5.1, 1],
+            y_range=[-5, 5.1, 1],  # y軸をさらに短く設定
+            x_length=2 * TAU,
+            y_length=2 * TAU,
+            axis_config={"color": GREEN},
             tips=False,
-        ).shift(DOWN * 1.5)
+        ).shift(
+            DOWN * 1.5
+        )  # 関数の位置をさらに低く設定
 
         self.play(Create(axes))
 
-        # フーリエ級数の定義
+        # フーリエ級数展開
         def fourier_series(x, n_terms):
             result = 0
             for n in range(1, n_terms + 1):
                 result += (-1)**(n + 1) * (2 / n) * np.sin(n * x)
             return result
 
+        # 短い周期のsin(x)を青色で表示し、「y = x」と表示
         x_vals = np.linspace(-2 * PI, 2 * PI, 200)
-        y_vals = [fourier_series(x, 1) for x in x_vals]
+        y_vals = [x for x in x_vals]
 
-        series_graph = axes.plot_line_graph(
+        line_graph = axes.plot_line_graph(
             x_values=x_vals,
             y_values=y_vals,
-            line_color=RED
-        )
-
-        self.add(series_graph)
-
-        # 項数を増やしながらフーリエ級数を描画
-        for n in range(2, 6):
-            new_y_vals = [fourier_series(x, n) for x in x_vals]
-            new_series_graph = axes.plot_line_graph(
-                x_values=x_vals,
-                y_values=new_y_vals,
-                line_color=RED
-            )
-            self.play(Transform(series_graph, new_series_graph), run_time=0.5)
-
-        final_y_vals = [x for x in x_vals]
-        final_series_graph = axes.plot_line_graph(
-            x_values=x_vals,
-            y_values=final_y_vals,
             line_color=BLUE
         )
+        line_text = MathTex("y = x").next_to(line_graph, UP).shift(UP * 2).scale(1.5)
+        self.play(Create(line_graph), Write(line_text))
+        self.wait(1)
 
-        # 最終的に直線 y = x を表示
-        self.play(Transform(series_graph, final_series_graph), run_time=2)
-        self.wait()
+        fourier_graphs = []
+        term_texts = []
+
+        # 各項の数式を生成
+        terms = [
+            "y = \\frac{2}{1} \\sin(x)",
+            "y = \\frac{2}{1} \\sin(x) - \\frac{2}{2} \\sin(2x)",
+            "y = \\frac{2}{1} \\sin(x) - \\frac{2}{2} \\sin(2x) + \\frac{2}{3} \\sin(3x)",
+            "y = \\frac{2}{1} \\sin(x) - \\frac{2}{2} \\sin(2x) + \\frac{2}{3} \\sin(3x) - \\frac{2}{4} \\sin(4x)",
+            "y = \\frac{2}{1} \\sin(x) - \\frac{2}{2} \\sin(2x) + \\frac{2}{3} \\sin(3x) - \\frac{2}{4} \\sin(4x) + \\frac{2}{5} \\sin(5x)",
+            "y = \\frac{2}{1} \\sin(x) - \\frac{2}{2} \\sin(2x) + \\frac{2}{3} \\sin(3x) - \\frac{2}{4} \\sin(4x) + \\frac{2}{5} \\sin(5x) - \\frac{2}{6} \\sin(6x)",
+        ]
+
+        for i in range(6):
+            y_vals = [fourier_series(x, i+1) for x in x_vals]
+            fourier_graphs.append(
+                axes.plot_line_graph(
+                    x_values=x_vals,
+                    y_values=y_vals,
+                    line_color=RED,
+                )
+            )
+            term_text = MathTex(terms[i]).to_edge(UP).shift(UP * 2).scale(1.5)
+            term_texts.append(term_text)
+
+        # 初期状態のプロット
+        current_graph = fourier_graphs[0]
+        current_text = term_texts[0]
+        self.play(Create(current_graph), Transform(line_text, current_text))
+        self.wait(1)
+        self.remove(line_text)
+
+        # 順次変形と数式の追加表示
+        for i in range(1, 6):
+            next_graph = fourier_graphs[i]
+            next_text = term_texts[i]
+            self.play(
+                Transform(current_graph, next_graph), Transform(current_text, next_text)
+            )
+            self.wait(1)
+            self.remove(current_graph)
+            self.remove(current_text)
+            current_graph = next_graph
+            current_text = next_text
+
+        all_objects = VGroup(current_text)
+        self.play(
+            all_objects.animate.shift(DOWN * 4),
+            FadeOut(
+                current_graph,
+                axes,
+                line_graph,
+            )
+        )
+        final_text = Text("直線のフーリエ級数展開").next_to(current_text, UP * 3)
+        final_form = MathTex(
+            "y = \\sum_{n=1}^{\\infty} (-1)^{n+1} \\frac{2}{n} \\sin(nx)"
+        ).scale(1.5)
+
+        self.play(Write(final_text))
+        self.wait(1)
+        self.play(Transform(current_text, final_form))
+        self.wait(1)
+
+        self.play(Indicate(current_text))
+        self.wait(1)
