@@ -3,6 +3,9 @@ from manim import *
 
 class FourierSeriesLine(MovingCameraScene):
     def construct(self):
+        # Save the state of camera
+        self.camera.frame.save_state()
+
         gros_titre = Text("フーリエ級数展開").scale(3)
         sub_titre = Text("直線 y = x").next_to(gros_titre, 3 * DOWN).scale(2)
         title = VGroup(gros_titre, sub_titre)
@@ -92,18 +95,40 @@ class FourierSeriesLine(MovingCameraScene):
                 current_graph = next_graph
         self.wait(1)
 
-
         # 原点にズームイン
-        self.play(
-            self.camera.frame.animate.scale(0.5).move_to(axes.c2p(0, 0))
-        )
+        self.play(self.camera.frame.animate.scale(0.5).move_to(axes.c2p(0, 0)))
+
+        text = Text("x=0付近ではよく近似できている。").shift(UP).scale(0.7)
+        self.play(Write(text))
         self.wait(1)
+        self.play(FadeOut(text))
+        # Restore the state saved
+        self.play(Restore(self.camera.frame))
+
+        self.wait(1)
+
+        # ギブズ現象が起きている点を円で囲む
+        circle1 = Circle(radius=0.2, color=YELLOW).move_to(axes.c2p(-PI, -PI))
+        circle2 = Circle(radius=0.2, color=YELLOW).move_to(axes.c2p(PI, PI))
+
+        self.play(Create(circle1), Create(circle2))
+        self.wait(1)
+        
+        text1 = Text("周期の端では角が飛び出てて、元の関数に収束しない。").shift(2 * UP)
+        text2 = Text("これをギブス現象という").next_to(text1, DOWN)
+
+        self.play(Write(text1, text2))
+        self.wait(1)
+        # self.play(ShowPassingFlashAround(text2[1]))
+        self.play(FadeOut(text))
 
         all_objects = VGroup(term_texts)
         self.remove(line_text)
         self.play(
             all_objects.animate.shift(DOWN * 4),
             FadeOut(
+                text1,
+                text2,
                 current_graph,
                 axes,
                 line_graph,
