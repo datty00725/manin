@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/4269113702_799789695_2649915038.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/1886061896_1488171537_2228860671.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/3422887784_2083175138_2976081690.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/1282016999_3909072943_3143299643.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/1511698025_1290940265_3834224864.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/2158427113_4268215521_629163790.mp4'
