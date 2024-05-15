@@ -5,7 +5,7 @@ class zoomEcuacion(ZoomedScene):
     def construct(self):
         
         #1:タイトルとManimのロゴ
-        titulo1 = Title("ZoomedScene: 画面の一部を拡大する。").shift(DOWN)
+        titulo1 = Text("ZoomedScene画面の一部を拡大する。").shift(DOWN)
         banner = ManimBanner()
         banner.scale(0.4)
         self.play(Create(titulo1), banner.create())
@@ -47,7 +47,7 @@ class zoomEcuacion(ZoomedScene):
         #grid_labels = VGroup(x_label, y_label)
         titulo2 = Title(
             # SyntaxError を防ぐためにスペースを追加
-            r"放物線の研究 $y=2x^2-12x+20$",
+            r"$y=2x^2-12x+20$",
             include_underline=True,
             font_size=40,
         )

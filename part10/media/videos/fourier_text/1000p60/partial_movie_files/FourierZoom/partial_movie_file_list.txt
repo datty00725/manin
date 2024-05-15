@@ -1,7 +1,7 @@
 # This file is used internally by FFMPEG.
 file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/4269113702_799789695_2649915038.mp4'
-file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/3457060765_1488171537_1315388674.mp4'
-file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/2173437581_2083175138_2600833566.mp4'
-file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/2121122576_3909072943_2104195621.mp4'
-file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/8362606_1290940265_4057020757.mp4'
-file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/1195507369_4268215521_1533565671.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/3449213990_1488171537_1315388674.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/2307341842_2083175138_3527838470.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/2776752257_3909072943_4133285746.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/2029097408_1290940265_2839432093.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1000p60/partial_movie_files/FourierZoom/411258852_4268215521_6485757.mp4'
