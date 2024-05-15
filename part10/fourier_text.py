@@ -157,7 +157,7 @@ class FourierZoom(ZoomedScene):
         self.wait(2)
 
         # 一番小さい円（実際にパスを描画している円）を取得
-        smallest_circle = ec.circles[NumberOfCoeff - 1]
+        smallest_circle = ec.circles[0]
 
         # ズームを有効にする
         self.activate_zooming()
