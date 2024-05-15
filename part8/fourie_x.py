@@ -7,13 +7,13 @@ class FourierSeriesLine(MovingCameraScene):
         self.camera.frame.save_state()
 
         gros_titre = Text("フーリエ級数展開").scale(2.5)
-        sub_titre1 = (
+        sub_titre = (
             VGroup(Text("直線"), MathTex("y = x"))
             .arrange(RIGHT)
             .next_to(gros_titre, DOWN)
             .scale(2)
         )
-        sub_titre = Text("直線 y = x").next_to(gros_titre, 3 * DOWN).scale(2)
+        #sub_titre = Text("直線 y = x").next_to(gros_titre, 3 * DOWN).scale(2)
         # sub_titre1=Text("-PI<x<PIでの近似").next_to(gros_titre, 3 * DOWN).scale(2)
 
         sub_titre1 = (
