@@ -1,11 +1,11 @@
 from manim import *
 
-config.pixel_width = 1000
-config.pixel_height = 1000
-config.frame_height = 10
-config.frame_width = 10
-config.frame_rate = 60
-config.background_color = "#0E1B24"
+#config.pixel_width = 1000
+#config.pixel_height = 1000
+#config.frame_height = 10
+#config.frame_width = 10
+#config.frame_rate = 60
+config.background_color = "#000000"
 
 class FourierEpicyclesMObject(VMobject):
 
@@ -97,7 +97,7 @@ class Pi(ZoomedScene):
 
     def construct(self):
         N = 1000
-        shape = Text("あ")
+        shape = MathTex("\\pi")
         
         def get_shape(shape):
             path = VMobject()
