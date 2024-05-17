@@ -125,6 +125,22 @@ class FourierEpicyclesMObject(VMobject):
 
 class Pi(ZoomedScene):
     def construct(self):
+        gros_titre = Text("絵文字").scale(5)
+        sub_titre = (
+            VGroup(Text("を円で書く"))
+            .arrange(RIGHT)
+            .next_to(gros_titre,2* DOWN)
+            .scale(2)
+        )
+        title = VGroup(gros_titre, sub_titre)
+
+        self.play(Write(title))
+        self.wait()
+
+        self.play(
+            title.animate.shift(3.5 * LEFT + 8 * UP).scale(0.3),
+        )
+        # get an array of complex points
         # SVGファイルを読み込む
         svg_path = "emoji_smile_happy_emoticon_icon_178576.svg"  # SVGファイルのパスを指定
         svg = SVGMobject(svg_path)
@@ -151,7 +167,7 @@ class Pi(ZoomedScene):
         # create my epicycles
         ec = FourierEpicyclesMObject(
             complex_points,
-            num_coefs=4,
+            num_coefs=200,
             speed_factor=1,
             circles_color="#118ab2",
             circles_opacity=1,
@@ -171,8 +187,11 @@ class Pi(ZoomedScene):
         #カメラを拡大したい場所に合わせる
         frame.move_to(ec.get_epicycles()[-1]["vector"].get_end())
 
-        #ディスプレイを座標
-        zoomed_display.shift(DOWN)  # 下にシフト
+        #zoomed_displayの大きさを変更
+        zoomed_display.scale(2) 
+
+        #pathの下端にzoomed_displayをシフト
+        zoomed_display.next_to(path, 8*DOWN)
 
         #ズームを開始する
         frame.add_updater(
