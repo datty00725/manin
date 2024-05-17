@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/3109220208_3424208151_223132457.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/459477995_489138100_2884195438.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/2785455022_1016092946_2760351336.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/4172858478_1296359010_3577395376.mp4'

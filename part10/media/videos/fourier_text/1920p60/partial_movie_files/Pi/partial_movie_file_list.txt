@@ -1,5 +1,4 @@
 # This file is used internally by FFMPEG.
-file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1920p60/partial_movie_files/Pi/429942126_3930048790_2443785916.mp4'
-file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1920p60/partial_movie_files/Pi/1599265724_3197652923_2097773128.mp4'
-file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1920p60/partial_movie_files/Pi/1599265724_3909072943_1401217846.mp4'
-file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1920p60/partial_movie_files/Pi/1599265724_3604160385_3241393799.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1920p60/partial_movie_files/Pi/4139275961_3675005440_3334241068.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1920p60/partial_movie_files/Pi/4265904714_1296359010_1666576426.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part10/media/videos/fourier_text/1920p60/partial_movie_files/Pi/1819280671_3005182893_3650141590.mp4'
