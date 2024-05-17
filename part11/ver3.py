@@ -123,27 +123,8 @@ class FourierEpicyclesMObject(VMobject):
     def get_path(self):
         return self.path
 
-
 class Pi(ZoomedScene):
     def construct(self):
-
-        #gros_titre = Text("せ").scale(5)
-        #ub_titre = (
-        #    VGroup(Text("を円で書く"))
-        #    .arrange(RIGHT)
-        #    .next_to(gros_titre,2* DOWN)
-        #    .scale(2)
-        #)
-        #title = VGroup(gros_titre, sub_titre)
-
-        #self.play(Write(title))
-        #self.wait()
-
-        #self.play(
-        #    title.animate.shift(3.5 * LEFT + 8 * UP).scale(0.3),
-        #)
-        # get an array of complex points
-
         # SVGファイルを読み込む
         svg_path = "emoji_smile_happy_emoticon_icon_178576.svg"  # SVGファイルのパスを指定
         svg = SVGMobject(svg_path)
@@ -176,9 +157,7 @@ class Pi(ZoomedScene):
             circles_opacity=1,
         )
         
-
         #ズームアニメーションの重要な定義：
-    
         #zoomed_camera：拡大したい部分を指すカメラ
         zoomed_camera = self.zoomed_camera
         #zoomed_display：拡大カメラの画像を表示するディスプレイ
@@ -194,12 +173,8 @@ class Pi(ZoomedScene):
 
         #ディスプレイを座標
         zoomed_display.shift(DOWN)  # 下にシフト
-        # zoomed_display.move_to(ORIGIN)  # 中央に移動
-        # zoomed_display.to_corner(UR)  # 右上の角に移動
-        # zoomed_display.to_edge(LEFT)  # 左端に移動
 
         #ズームを開始する
-        
         frame.add_updater(
             lambda mob: mob.move_to(ec.get_epicycles()[-1]["vector"].get_end())
         )
@@ -209,20 +184,12 @@ class Pi(ZoomedScene):
         self.play(Create(ec.get_circles()))
         self.wait(1)
         self.activate_zooming()
-
-        #ズームのディスプレイが表示されるアニメーションを生成
         self.play(self.get_zoomed_display_pop_out_animation())
         self.wait(1)
         self.add(ec)
-        #self.wait(1)
         
-        
-        
-
-
         self.wait(1 * TAU)
-        
-         # VMobjectのみを選別してフェードアウト
+
         self.play(FadeOut(zoomed_display))
         # zoomed_display以外のVMobjectを選別してフェードアウト
         # zoomed_displayとzoomed_camera以外のVMobjectを選別してフェードアウト

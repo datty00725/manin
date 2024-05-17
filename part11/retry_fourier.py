@@ -65,13 +65,7 @@ class FourierCirclesScene(ZoomedScene):
         "wait_before_start": None
     }
  
-    def setup(self):
-        ZoomedScene.setup(self)
-        self.slow_factor_tracker = ValueTracker(
-            self.slow_factor
-        )
-        self.vector_clock = ValueTracker(0)
-        self.add(self.vector_clock)
+    
  
     def add_vector_clock(self):
         self.vector_clock.add_updater(
