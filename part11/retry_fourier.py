@@ -1,4 +1,7 @@
-from manimlib import *
+from manim import *
+import itertools as it
+from functools import reduce
+import operator as op
  
 # https://github.com/zavden/manim-fourier-tutorial/blob/main/fourier.py
 #     _    _         _                  _
@@ -237,7 +240,7 @@ class FourierCirclesScene(ZoomedScene):
         ])
         wave_copies.arrange(RIGHT, buff=0)
         top_point = wave_copies.get_top()
-        wave.creation = ShowCreation(
+        wave.creation = Create(
             wave,
             run_time=(1 / self.get_slow_factor()),
             rate_func=linear,
@@ -364,7 +367,7 @@ class AbstractFourierOfTexSymbol(FourierCirclesScene):
         "start_drawn": True,
         "path_custom_position": lambda mob: mob,
         "max_circle_stroke_width": 1,
-        "tex_class": TexMobject,
+        "tex_class": Tex,
         "tex_config": {
             "fill_opacity": 0,
             "stroke_width": 1,
@@ -470,7 +473,7 @@ class FourierOfPaths(AbstractFourierOfTexSymbol):
     CONFIG = {
         "n_vectors": 100,
         "name_color": WHITE,
-        "tex_class": TexMobject,
+        "tex_class": Tex,
         "tex": None,
         "file_name": None,
         "tex_config": {
@@ -492,11 +495,11 @@ class FourierOfPaths(AbstractFourierOfTexSymbol):
             name = self.tex_class(self.tex, **self.tex_config)
         elif self.file_name != None and self.tex == None:
             name = SVGMobject(self.file_name, **self.svg_config)
-        max_width = FRAME_WIDTH - 2
-        max_height = FRAME_HEIGHT - 2
-        name.set_width(max_width)
-        if name.get_height() > max_height:
-            name.set_height(max_height)
+        #max_width = FRAME_WIDTH - 2
+        #max_height = FRAME_HEIGHT - 2
+        #name.set_width(max_width)
+        #if name.get_height() > max_height:
+        #    name.set_height(max_height)
  
         frame = self.camera.frame
         frame.save_state()
@@ -532,7 +535,7 @@ class FourierOfPaths(AbstractFourierOfTexSymbol):
                 self.add(new_vectors, new_circles)
                 self.vector_clock.set_value(0)
                 self.play(
-                    ShowCreation(drawn_path),
+                    Create(drawn_path),
                     rate_func=linear,
                     run_time=self.time_per_symbol
                 )
@@ -562,13 +565,13 @@ class FourierOfPaths(AbstractFourierOfTexSymbol):
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  
  
-# Using TexMobject or TextMobject
+# Using Tex or Text
 class FourierOfTexSymbol(AbstractFourierOfTexSymbol):
     CONFIG = {
         # if start_draw = True the path start to draw
         "start_drawn": True,
         # Tex config
-        "tex_class": TexMobject,
+        "tex_class": Tex,
         "tex": r"\Sigma",
         "tex_config": {
             "fill_opacity": 0,
@@ -616,7 +619,7 @@ class Tsymbol20vectors(FourierOfTexSymbol):
     CONFIG = {
         "n_vectors": 20,
         "run_time": 10, # 10 seconds
-        "tex_class": TextMobject,
+        "tex_class": Text,
         "tex": "T"
     }
  
@@ -624,7 +627,7 @@ class Tsymbol50vectors(FourierOfTexSymbol):
     CONFIG = {
         "n_vectors": 50,
         "run_time": 10, # 10 seconds
-        "tex_class": TextMobject,
+        "tex_class": Text,
         "tex": "T"
     }
  
@@ -632,7 +635,7 @@ class Tsymbol150vectors(FourierOfTexSymbol):
     CONFIG = {
         "n_vectors": 150,
         "run_time": 10, # 10 seconds
-        "tex_class": TextMobject,
+        "tex_class": Text,
         "tex": "T"
     }
  
@@ -640,7 +643,7 @@ class SigmaSymbol150vectors(FourierOfTexSymbol):
     CONFIG = {
         "n_vectors": 150,
         "run_time": 10, # 10 seconds
-        "tex_class": TexMobject, # <-------- Default
+        "tex_class": Tex, # <-------- Default
         "tex": "\\Sigma"
     }
  
@@ -649,7 +652,7 @@ class SlowFactor0_1(FourierOfTexSymbol):
     CONFIG = {
         "n_vectors": 30,
         "run_time": 7,
-        "tex_class": TexMobject,
+        "tex_class": Tex,
         "tex": "\\Sigma",
         "slow_factor": 0.1, # <------------------ Default
     }
@@ -658,7 +661,7 @@ class SlowFactor0_3(FourierOfTexSymbol):
     CONFIG = {
         "n_vectors": 30,
         "run_time": 7,
-        "tex_class": TexMobject,
+        "tex_class": Tex,
         "tex": "\\Sigma",
         "slow_factor": 0.3, # <------------------
     }
@@ -667,7 +670,7 @@ class SlowFactor0_5(FourierOfTexSymbol):
     CONFIG = {
         "n_vectors": 30,
         "run_time": 7,
-        "tex_class": TexMobject,
+        "tex_class": Tex,
         "tex": "\\Sigma",
         "slow_factor": 0.5, # <------------------
     }
@@ -897,6 +900,7 @@ class ZoomedDisplayToFullScreen(FourierOfTexSymbol):
  
 class ZoomedDisplayToFullScreenWithRestore(ZoomedDisplayToFullScreen):
     CONFIG = {
+        "slow_factor": 0.05,
         "run_time": 20,
         "zoom_camera_to_full_screen_config": {
             "run_time": 12,
@@ -922,7 +926,7 @@ class ZoomedDisplayToFullScreenWithRestore(ZoomedDisplayToFullScreen):
 class FourierOfPathsTB(FourierOfPaths):
     CONFIG = {
         "n_vectors": 100,
-        "tex_class": TextMobject,
+        "tex_class": Text,
         "tex": "TB",
         "tex_config": {
             "stroke_color": RED,
@@ -978,7 +982,7 @@ class CustomAnimationExample(FourierCirclesScene):
         },
     }
     def construct(self):
-        t_symbol = TextMobject("T", **self.fourier_symbol_config)
+        t_symbol = Text("T", **self.fourier_symbol_config)
         c_clef_symbol = SVGMobject("c_clef", **self.fourier_symbol_config)
         c_clef_symbol.match_height(t_symbol)
         # set gradient
@@ -1000,7 +1004,7 @@ class CustomAnimationExample(FourierCirclesScene):
         circles2 = self.get_circles(vectors2)
         drawn_path2= self.get_drawn_path(vectors2)
         # text definition
-        text = TextMobject("Thanks for watch!")
+        text = Text("Thanks for watch!")
         text.scale(1.5)
         text.next_to(group,DOWN)
         # all elements toget
@@ -1022,7 +1026,7 @@ class CustomAnimationExample(FourierCirclesScene):
                 for arrow in vg
             ],
             *[
-                ShowCreation(circle)
+                Create(circle)
                 for cg in [circles1_to_fade, circles2_to_fade]
                 for circle in cg
             ],

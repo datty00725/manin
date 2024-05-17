@@ -127,33 +127,35 @@ class FourierEpicyclesMObject(VMobject):
 class Pi(ZoomedScene):
     def construct(self):
 
-        gros_titre = Text("せ").scale(5)
-        sub_titre = (
-            VGroup(Text("を円で書く"))
-            .arrange(RIGHT)
-            .next_to(gros_titre,2* DOWN)
-            .scale(2)
-        )
-        title = VGroup(gros_titre, sub_titre)
+        #gros_titre = Text("せ").scale(5)
+        #ub_titre = (
+        #    VGroup(Text("を円で書く"))
+        #    .arrange(RIGHT)
+        #    .next_to(gros_titre,2* DOWN)
+        #    .scale(2)
+        #)
+        #title = VGroup(gros_titre, sub_titre)
 
-        self.play(Write(title))
-        self.wait()
+        #self.play(Write(title))
+        #self.wait()
 
-        self.play(
-            title.animate.shift(3.5 * LEFT + 8 * UP).scale(0.3),
-        )
+        #self.play(
+        #    title.animate.shift(3.5 * LEFT + 8 * UP).scale(0.3),
+        #)
         # get an array of complex points
+
+        # SVGファイルを読み込む
+        svg_path = "music_symbols.svg"  # SVGファイルのパスを指定
+        svg = SVGMobject(svg_path)
+        svg.set_height(6)
+
+        # SVGパスを取得
+        path = VMobject()
+        for sp in svg.family_members_with_points():
+            path.append_points(sp.get_points())
+
         N = 1000
-        tex = "\\pi"
-        shape = Text("せ")
-
-        def get_shape(shape):
-            path = VMobject()
-            for sp in shape.family_members_with_points():
-                path.append_points(sp.get_points())
-            return path
-
-        path = get_shape(shape)
+        
         complex_points = np.array(
             [
                 complex(*path.point_from_proportion(alpha)[:2])
@@ -168,7 +170,7 @@ class Pi(ZoomedScene):
         # create my epicycles
         ec = FourierEpicyclesMObject(
             complex_points,
-            num_coefs=200,
+            num_coefs=4,
             speed_factor=1,
             circles_color="#118ab2",
             circles_opacity=1,
@@ -203,11 +205,52 @@ class Pi(ZoomedScene):
         )
 
         self.play(Create(ec.get_path()))
-        self.add(ec)
         self.wait(1)
+        self.add(ec)
+        #self.wait(1)
         self.activate_zooming()
         #ズームのディスプレイが表示されるアニメーションを生成
         self.play(self.get_zoomed_display_pop_out_animation())
 
 
-        self.wait(4 * TAU)
+        self.wait(1 * TAU)
+        self.add(ec.get_path())
+        self.remove(ec)
+
+        self.wait(3)
+
+        ec = FourierEpicyclesMObject(
+            complex_points,
+            num_coefs=8,
+            speed_factor=1,
+            circles_color="#118ab2",
+            circles_opacity=1,
+        )
+
+        #カメラを拡大したい場所に合わせる
+        frame.move_to(ec.get_epicycles()[-1]["vector"].get_end())
+
+        #ディスプレイを座標
+        zoomed_display.shift(DOWN)  # 下にシフト
+        # zoomed_display.move_to(ORIGIN)  # 中央に移動
+        # zoomed_display.to_corner(UR)  # 右上の角に移動
+        # zoomed_display.to_edge(LEFT)  # 左端に移動
+
+        #ズームを開始する
+        
+        frame.add_updater(
+            lambda mob: mob.move_to(ec.get_epicycles()[-1]["vector"].get_end())
+        )
+
+        self.play(Create(ec.get_path()))
+        
+        self.add(ec)
+        #self.wait(1)
+        self.activate_zooming()
+        #ズームのディスプレイが表示されるアニメーションを生成
+        self.play(self.get_zoomed_display_pop_out_animation())
+
+
+        self.wait(1 * TAU)
+
+

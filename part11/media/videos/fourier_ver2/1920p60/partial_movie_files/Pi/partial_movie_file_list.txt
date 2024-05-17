@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part11/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/3109220208_772436311_223132457.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part11/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/1313092922_2819135130_2337556921.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part11/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/3271785462_773928427_2600352285.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part11/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/2990786061_831970138_537046848.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part11/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/4164910538_1488171537_4150814531.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part11/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/498430559_489138100_962427452.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part11/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/959466777_1016092946_217373829.mp4'
+file 'file:C:/Users/theko/Desktop/UEC/4年/manin/part11/media/videos/fourier_ver2/1920p60/partial_movie_files/Pi/4229902237_773928427_992843931.mp4'

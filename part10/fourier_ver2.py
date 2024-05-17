@@ -127,21 +127,6 @@ class FourierEpicyclesMObject(VMobject):
 class Pi(ZoomedScene):
     def construct(self):
 
-        gros_titre = Text("せ").scale(5)
-        sub_titre = (
-            VGroup(Text("を円で書く"))
-            .arrange(RIGHT)
-            .next_to(gros_titre,2* DOWN)
-            .scale(2)
-        )
-        title = VGroup(gros_titre, sub_titre)
-
-        self.play(Write(title))
-        self.wait()
-
-        self.play(
-            title.animate.shift(3.5 * LEFT + 8 * UP).scale(0.3),
-        )
         # get an array of complex points
         N = 1000
         tex = "\\pi"
