@@ -1,6 +1,18 @@
 from manim import *
 from fractal import KochSnowflake
 
+#これ入れないと日本語がバグる。
+Tex.set_default(tex_template=TexTemplate(
+    tex_compiler = "lualatex", 
+    # tex_compiler = "luatex" でも可
+    output_format = ".pdf", 
+    preamble = r"""
+        \usepackage{amsmath}
+        \usepackage{amssymb}
+        \usepackage{luatexja}
+        \usepackage[haranoaji]{luatexja-preset}
+    """
+))
 
 class CW_KochCurveSandwich(MovingCameraScene):
     def construct(self):
@@ -50,10 +62,10 @@ class CW_KochCurveSandwich(MovingCameraScene):
             return KC
 
         level = (
-            Variable(0, Text("次元"), var_type=Integer).scale(2).set_color("#4AF1F2")
+            Variable(0, Tex("次元"), var_type=Integer).scale(2).set_color("#4AF1F2")
         )
         txt = VGroup(level).shift(9 * UP + LEFT * 1)
-        text = Text("コッホ曲線").scale(2)
+        text = Tex("コッホ曲線").scale(2)
 
         # Create the initial Koch curve and its inverted version
         kc = KochCurve(0, stroke_width=12).scale(0.5).next_to(text, UP, buff=0.5)
@@ -92,7 +104,7 @@ class CW_KochCurveSandwich(MovingCameraScene):
         self.play(self.camera.frame.animate.scale(0.2).move_to(kc.get_top()))
         self.wait(2)
         zoom_text = (
-            Text("一部分を抜き出しても全体と似た形になる")
+            Tex("一部分を抜き出しても全体と似た形になる")
             .scale(0.175)
             .next_to(kc.get_top(), UP)
         )
@@ -108,11 +120,11 @@ class CW_KochCurveSandwich(MovingCameraScene):
         # )
         self.wait(1)
 
-        txt = Text("コッホ雪片")
+        txt = Tex("コッホ雪片")
 
-        level = Variable(0, Text("次元"), var_type=Integer).set_color("#4AF1F2")
+        level = Variable(0, Tex("次元"), var_type=Integer).next_to(txt,DOWN).set_color("#4AF1F2")
 
-        tex_group = VGroup(txt, level).to_corner(UL)
+        tex_group = VGroup(txt, level)
         tex_group.scale(2).shift(7 * UP)
 
         color = ("#0A68EF", "#4AF1F2")
