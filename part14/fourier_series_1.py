@@ -26,16 +26,13 @@ class FourierTex(Scene):
         ])
         samples -= self.center_point
         complex_samples = samples[:, 0] + 1j * samples[:, 1]
-
-        result = []
-        for freq in freqs:
-            riemann_sum = np.array([
+ 
+        return [
+            np.array([
                 np.exp(-TAU * 1j * freq * t) * cs
                 for t, cs in zip(ts, complex_samples)
-            ]).sum() * dt
-            result.append(riemann_sum)
-
-        return result
+            ]).sum() * dt for freq in freqs
+        ]
 
     # "T"文字のパスを取得するメソッド
     def get_paths(self):
