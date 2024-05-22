@@ -50,7 +50,7 @@ class FourierTex(Scene):
 
     # "はのか"文字のパスを取得するメソッド
     def get_paths(self):
-        tex_mob = Tex("沙羅曼蛇一")  # "はのか"文字を作成
+        tex_mob = Tex("䨻")  # "はのか"文字を作成
         tex_mob.scale_to_fit_width(10)  # 幅を10にスケーリング
         paths = tex_mob.family_members_with_points()[0]
         for p in paths:
@@ -59,7 +59,10 @@ class FourierTex(Scene):
         return paths
 
     def construct(self):
-        gros_titre = Tex("沙羅曼蛇一").scale(5)
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble(r"\usepackage{otf}")
+
+        gros_titre = Tex("\UTF{4A3B}",tex_template=myTemplate,).scale(5)
         sub_titre = (
             VGroup(Tex("を円で書く"))
             .arrange(RIGHT)
@@ -76,7 +79,7 @@ class FourierTex(Scene):
         )
 
         j = 0
-        for i in [5,10,100]:
+        for i in [5]:
             self.n_vectors = i  # ここでn_vectorsの値を変更
             ennokazu = Tex("円の数:").scale(2)
             cirnum1 = Tex("5").scale(2).next_to(ennokazu, RIGHT, buff=1)
@@ -164,16 +167,19 @@ class FourierTex(Scene):
             self.wait(1 / self.slow_factor + 1)  # 一時停止
             for vc in all_vectors_circles:
                 vc.clear_updaters()  # アップデータを削除
-            self.play(*[FadeOut(vc) for vc in all_vectors_circles])  # ベクトルと円をフェードアウト
+            #self.play(*[FadeOut(vc) for vc in all_vectors_circles])  # ベクトルと円をフェードアウト
 
             self.wait(2)  # 一時停止
 
-            self.play(FadeOut(title1))
+            #self.play(FadeOut(title1))
             if j == 0:
+                self.play(*[FadeOut(vc) for vc in all_vectors_circles])
                 self.play(FadeOut(box1))
             elif j == 1:
+                self.play(*[FadeOut(vc) for vc in all_vectors_circles])
                 self.play(FadeOut(box2))
             else:
+                self.play(*[FadeOut(vc) for vc in all_vectors_circles])
                 self.play(FadeOut(box3))
 
             j = j + 1
