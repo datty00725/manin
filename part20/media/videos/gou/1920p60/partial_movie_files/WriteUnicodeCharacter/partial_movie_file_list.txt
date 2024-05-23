@@ -1,0 +1,3 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/ADACHI/Desktop/manim X/manin/part20/media/videos/gou/1920p60/partial_movie_files/WriteUnicodeCharacter/1795198041_2817488574_223132457.mp4'
+file 'file:C:/Users/ADACHI/Desktop/manim X/manin/part20/media/videos/gou/1920p60/partial_movie_files/WriteUnicodeCharacter/2210946382_1141282389_3124697116.mp4'

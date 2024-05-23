@@ -1,8 +1,8 @@
 from manim import *
 
-class WriteUnicodeCharacter(Scene):
+class DisplayUnicodeImage(Scene):
     def construct(self):
-        # Use a font that supports the character 𰻞 (U+30EDE)
-        character = Text("𰻞", font="Noto Sans CJK JP", font_size=144)
-        self.play(Write(character))
+        # Load the image file containing the Unicode character
+        image = ImageMobject("unicode_char.png")
+        self.play(FadeIn(image))
         self.wait(2)
