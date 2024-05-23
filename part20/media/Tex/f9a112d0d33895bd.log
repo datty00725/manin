@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=latex 2024.2.6)  22 MAY 2024 23:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=latex 2024.2.6)  23 MAY 2024 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./media/Tex/48edfdc78f6cb899.tex
-(media/Tex/48edfdc78f6cb899.tex
+**./media/Tex/f9a112d0d33895bd.tex
+(media/Tex/f9a112d0d33895bd.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (C:\Program Files\MiKTeX\tex/latex/standalone\standalone.cls
@@ -154,24 +154,46 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\theko\AppData\Roaming\MiKTeX\tex/platex/japanese-otf\otf.sty
+)) (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-dvips.def
+File: l3backend-dvips.def 2024-01-04 L3 backend support: dvips
+\l__pdf_internal_box=\box54
+\g__pdf_backend_object_int=\count279
+\l__pdf_backend_content_box=\box55
+\l__pdf_backend_model_box=\box56
+\g__pdf_backend_annotation_int=\count280
+\g__pdf_backend_link_int=\count281
+\g__pdf_backend_link_sf_int=\count282
+)
+No file f9a112d0d33895bd.aux.
+\openout1 = `f9a112d0d33895bd.aux'.
 
-! LaTeX Error: This file needs format `pLaTeX2e'
-               but this is `LaTeX2e'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 \NeedsTeXFormat{pLaTeX2e}
-                              
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+Preview: Fontsize 10pt
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.10 \symbol{\"30EDE}
+                      
 Here is how much of TeX's memory you used:
- 3190 strings out of 474543
- 49545 string characters out of 5754288
+ 3411 strings out of 474543
+ 55174 string characters out of 5754288
  1922975 words of memory out of 5000000
- 25422 multiletter control sequences out of 15000+600000
+ 25644 multiletter control sequences out of 15000+600000
  558069 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,0n,71p,244b,103s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,2n,71p,244b,106s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 No pages of output.
